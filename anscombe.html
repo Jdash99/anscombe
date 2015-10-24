@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anscombe's quartet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+
+        .chart {
+            display: inline-block;;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="chart" id="chart1"></div>
+    <div class="chart" id="chart2"></div>
+</div>
+<div>
+    <div class="chart" id="chart3"></div>
+    <div class="chart" id="chart4"></div>
+</div>
+</body>
+  <script type="text/javascript">
+    var datasetI = [
+    {"x":10.0, "y":8.04},
+    {"x":8.00, "y":6.95},
+    {"x":13.0, "y":7.58},
+    {"x":9.00, "y":8.81},
+    {"x":11.0, "y":8.33},
+    {"x":14.0, "y":9.96},
+    {"x":6.00, "y":7.24},
+    {"x":4.00, "y":4.26},
+    {"x":12.0, "y":10.84},
+    {"x":7.00, "y":5.85},
+    {"x":5.00, "y":5.68},
+    ]
+
+    var datasetII = [
+    {"x":10.0, "y":9.14},
+    {"x":8.00, "y":8.14},
+    {"x":13.0, "y":8.74},
+    {"x":9.00, "y":8.77},
+    {"x":11.0, "y":9.26},
+    {"x":14.0, "y":8.10},
+    {"x":6.00, "y":6.13},
+    {"x":4.00, "y":3.10},
+    {"x":12.0, "y":9.13},
+    {"x":7.00, "y":7.26},
+    {"x":5.00, "y":4.74},
+    ]
+
+    var datasetIII = [
+    {"x":10.0, "y":7.46},
+    {"x":8.00, "y":6.77},
+    {"x":13.0, "y":12.74},
+    {"x":9.00, "y":7.11},
+    {"x":11.0, "y":7.81},
+    {"x":14.0, "y":8.84},
+    {"x":6.00, "y":6.08},
+    {"x":4.00, "y":5.39},
+    {"x":12.0, "y":8.15},
+    {"x":7.00, "y":6.42},
+    {"x":5.00, "y":5.73},
+    ]
+
+    var datasetIV = [
+    {"x":8.00, "y":6.58},
+    {"x":8.00, "y":5.76},
+    {"x":8.00, "y":7.71},
+    {"x":8.00, "y":8.84},
+    {"x":8.00, "y":8.47},
+    {"x":8.00, "y":7.04},
+    {"x":8.00, "y":5.25},
+    {"x":19.0, "y":12.5},
+    {"x":8.00, "y":5.56},
+    {"x":8.00, "y":7.91},
+    {"x":8.00, "y":6.89},
+    ]
+
+    //Draw the four charts
+    drawChart("I", datasetI, "#chart1");
+    drawChart("II", datasetII, "#chart2");
+    drawChart("III",datasetIII, "#chart3");
+    drawChart("IV", datasetIV, "#chart4");
+
+
+    function drawChart(title, dataset, chartId) {
+
+        var margin = {top: 10, right: 0, bottom: 10, left: 10},
+        width = 400 - margin.left - margin.right,
+        height = 350 - margin.top - margin.bottom;
+        padding = 30;
+
+        // Create the SVG viewport
+        var svg = d3.select(chartId)
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+
+        var xScale = d3.scale.linear()
+            //.domain([0, d3.max(dataset, function(d) { return d.x; })])
+            .domain([0,20])
+            .range([0, width-padding]);
+
+        var yScale = d3.scale.linear()
+            // .domain([0, d3.max(dataset, function(d) { return d.y; })])
+            .domain([0,15])
+            .range([height-padding, padding]);
+
+        var xAxis = d3.svg.axis()
+          .scale(xScale)
+          .orient("bottom")
+          .ticks(2);
+
+        var yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient("left")
+          .ticks(3);
+
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(30," + (height - padding) + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(" + padding + ",0)")
+            .call(yAxis);
+
+        svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d) {
+                return xScale(d.x);
+            })
+            .attr("cy", function(d) {
+                return yScale(d.y);
+            })
+            .attr("r", 4)
+            .attr("fill", "#CF0101")
+            .attr("fill-opacity", "0.7");
+
+        svg.append("text")
+            .attr("x", 65)
+            .attr("y", 50 - (margin.top / 2))
+            .attr("text-anchor", "middle")
+            .style("font-size", "20px")
+            .text(title);
+    }
+  </script>
+</html>
