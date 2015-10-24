@@ -1,8 +1,11 @@
 #Cuarteto de Ascombe
 
+En este repositorio se desarrolla una visualización para demostrar la importancia de gráficar los datos antes de analizarlos utilizando la libreria d3.js: [Cuartero de Ascombe](http://jdash99.github.io/anscombe/)
+
 El cuarteto de Ascombe comprende de cuatro conjuntos de datos que tienen propiedades estadisticas casi identicas, sin embargo, se ven muy diferentes al ser graficados.
 
 
+##Conjunto de datos
 |x1   |   y1    |  x2    |  y2    |  x3    |  y3    |  x4   |  y4   |
 |-----|---------|--------|--------|--------|--------|-------|-------|
 |10.0 |   8.04  |  10.0  |  9.14  |  10.0  |  7.46  |  8.0  |  6.58 |
@@ -17,4 +20,13 @@ El cuarteto de Ascombe comprende de cuatro conjuntos de datos que tienen propied
 |7.0  |   4.82  |  7.0   |  7.26  |  7.0   |  6.42  |  8.0  |  7.91 |
 |5.0  |   5.68  |  5.0   |  4.74  |  5.0   |  5.73  |  8.0  |  6.89 |
 
-En este repositorio se desarrolla una visualización para demostrar la importancia de gráficar los datos antes de analizarlos utilizando la libreria d3.js: [Cuartero de Ascombe](http://jdash99.github.io/anscombe/)
+##Propiedades estadisticas de los datos
+
+N = 11
+media de x para cada caso = 9.0
+media de y para cada caso = 7.5
+ecuación de la regresión lineal para cada caso: Y = 3 + 0.5X
+
+##Gráfica
+
+![anscombe](anscombe.png)
