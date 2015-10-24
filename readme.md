@@ -2,6 +2,8 @@
 
 El cuarteto de Ascombe comprende de cuatro conjuntos de datos que tienen propiedades estadisticas casi identicas, sin embargo, se ven muy diferentes al ser graficados.
 
+|       I       |     II          |  III            |  IV           |
+|:-------------:|:---------------:|:---------------:|:-------------:|
 |x    |   y     |  x     |  y     |  x     |  y     |  x    |  y    |
 |-----|---------|--------|--------|--------|--------|-------|-------|
 |10.0 |   8.04  |  10.0  |  9.14  |  10.0  |  7.46  |  8.0  |  6.58 |
