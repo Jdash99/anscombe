@@ -1,4 +1,5 @@
-#Cuarteto de Ascombe
+Cuarteto de Ascombe
+===================
 
 En este repositorio se desarrolla una visualización para demostrar la importancia de gráficar los datos antes de analizarlos utilizando la libreria d3.js: [Cuartero de Ascombe](http://jdash99.github.io/anscombe/)
 
