@@ -6,7 +6,9 @@ En este repositorio se desarrolla una visualización para demostrar la importanc
 El cuarteto de Ascombe comprende de cuatro conjuntos de datos que tienen propiedades estadisticas casi identicas, sin embargo, se ven muy diferentes al ser graficados.
 
 
-##Conjunto de datos
+Conjunto de datos
+===================
+
 |x1   |   y1    |  x2    |  y2    |  x3    |  y3    |  x4   |  y4   |
 |-----|---------|--------|--------|--------|--------|-------|-------|
 |10.0 |   8.04  |  10.0  |  9.14  |  10.0  |  7.46  |  8.0  |  6.58 |
