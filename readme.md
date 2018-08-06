@@ -21,13 +21,15 @@ El cuarteto de Ascombe comprende de cuatro conjuntos de datos que tienen propied
 |7.0  |   4.82  |  7.0   |  7.26  |  7.0   |  6.42  |  8.0  |  7.91 |
 |5.0  |   5.68  |  5.0   |  4.74  |  5.0   |  5.73  |  8.0  |  6.89 |
 
-##Propiedades estadisticas de los datos
+Propiedades estadisticas de los datos
+======================================
 
 * N = 11
 * media de x para cada caso = 9.0
 * media de y para cada caso = 7.5
 * ecuación de la regresión lineal para cada caso: Y = 3 + 0.5X
 
-##Gráfica
+Gráfica
+===================
 
 ![anscombe](anscombe.png)
